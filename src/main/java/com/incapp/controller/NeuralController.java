@@ -73,10 +73,7 @@ public class NeuralController {
 	public String askQuestion() {
 		return "ask_question";
 	}
-	@GetMapping("/forget_password")
-	public String forgetPassword() {
-		return "forget_password";
-	}
+	
 	@GetMapping("/reset_password")
 	public String resetPassword(@RequestParam String token,Model m) {
 		
@@ -235,7 +232,7 @@ public class NeuralController {
 	public String forget(@RequestParam String email, Model m) {
 		
 		MyUser user=userservice.getUserByUsername(email);
-		
+		System.out.println("FFFFFFFFFFFFFFFFFFFFFFFFFFFFF");
 		if(user==null) {
 			m.addAttribute("msg", "User Does Not Exist!");
 		}else {
